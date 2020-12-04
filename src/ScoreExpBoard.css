@@ -1,0 +1,19 @@
+.ScoreExpBoard-container {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.ScoreExp-msg {
+    font-size: 25px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.ScoreExp-exp {
+    font-size: 15px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
