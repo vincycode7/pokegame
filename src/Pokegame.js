@@ -22,18 +22,24 @@ class Pokegame extends Component {
     let hand2 = [...this.props.pokemon];
     while (hand1.length < hand2.length) {
       let randIdx = Math.floor(Math.random() * hand2.length);
-      console.log(hand2.splice(randIdx, 1), hand2.splice(randIdx, 1)[0]);
       let randPokemon = hand2.splice(randIdx, 1)[0];
       hand1.push(randPokemon);
-      console.log(hand1, hand2);
     }
+    let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+    let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+
     return (
       <div>
         <h1>pokegame</h1>
         <Pokedex
-          Pokedex_width="99%"
-          Pokedex_height="fit-content"
-          Pokedex_backgroundColor="rgb(240, 240, 240)"
+          pokemon={hand1}
+          exp={exp1}
+          isWinner={exp1 > exp2 ? true : false}
+        />
+        <Pokedex
+          pokemon={hand2}
+          exp={exp2}
+          isWinner={exp2 > exp1 ? true : false}
         />
       </div>
     );

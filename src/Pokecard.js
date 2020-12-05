@@ -13,10 +13,12 @@ class Pokecard extends Component {
     var pokeImgSrc = `${POKE_API}${padToThree(props.id)}.png`;
     return (
       <div className="Pokecard">
-        <h1 className="poke-title"> {props.name} </h1>
-        <img className="poke-image" src={pokeImgSrc} alt={props.name} />
-        <div className="poke-data"> {props.type} </div>
-        <div className="pokecard-data"> {props.exp} </div>
+        <h1 className="Pokecard-title"> {props.name} </h1>
+        <div className="Pokecard-image">
+          <img src={pokeImgSrc} alt={props.name} />
+        </div>
+        <div className="Pokecard-data"> {props.type} </div>
+        <div className="Pokecard-data"> {props.exp} </div>
       </div>
     );
   }
