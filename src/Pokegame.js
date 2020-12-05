@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import "./Pokedex.css";
-import ScoreExpBoard from "./ScoreExpBoard";
-import Pokecard from "./Pokecard";
+import "./Pokegame.css";
+import Pokedex from "./Pokedex";
 
-class Pokedex extends Component {
+class Pokegame extends Component {
+  state = {};
   static defaultProps = {
     pokemon: [
       { id: 4, name: "Charmander", type: "fire", base_experience: 62 },
@@ -17,26 +17,27 @@ class Pokedex extends Component {
       { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
     ],
   };
-
   render() {
-    var props = this.props;
-
+    let hand1 = [];
+    let hand2 = [...this.props.pokemon];
+    while (hand1.length < hand2.length) {
+      let randIdx = Math.floor(Math.random() * hand2.length);
+      console.log(hand2.splice(randIdx, 1), hand2.splice(randIdx, 1)[0]);
+      let randPokemon = hand2.splice(randIdx, 1)[0];
+      hand1.push(randPokemon);
+      console.log(hand1, hand2);
+    }
     return (
-      <div className="Pokedex">
-        <h1> Pokedex </h1>
-        <div className="Pokedex-cards">
-          {props.pokemon.map((p) => (
-            <Pokecard
-              id={p.id}
-              name={p.name}
-              type={p.type}
-              exp={p.base_experience}
-            />
-          ))}
-        </div>
+      <div>
+        <h1>pokegame</h1>
+        <Pokedex
+          Pokedex_width="99%"
+          Pokedex_height="fit-content"
+          Pokedex_backgroundColor="rgb(240, 240, 240)"
+        />
       </div>
     );
   }
 }
 
-export default Pokedex;
+export default Pokegame;

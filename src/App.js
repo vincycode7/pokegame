@@ -1,15 +1,17 @@
 // import logo from "./logo.svg";
+// https://www.alibabacloud.com/campaign/free-trial/enterprise?gclid=EAIaIQobChMI9u3R6-617QIVAMC7CB1d3AcYEAEYASAAEgJQkfD_BwE
+
 import "./App.css";
-import Pokedex from "./Pokedex";
+import Pokegame from "./Pokegame";
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I love You !!";
+}
 
 function App() {
   return (
     <div className="App-container">
-      <Pokedex
-        Pokedex_width="99%"
-        Pokedex_height="fit-content"
-        Pokedex_backgroundColor="rgb(240, 240, 240)"
-      />
+      <Pokegame />
     </div>
   );
 }
