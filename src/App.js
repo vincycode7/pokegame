@@ -4,10 +4,6 @@
 import "./App.css";
 import Pokegame from "./Pokegame";
 
-function myFunction() {
-  document.getElementById("demo").innerHTML = "I love You !!";
-}
-
 function App() {
   return (
     <div className="App-container">
